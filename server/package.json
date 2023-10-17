@@ -6,8 +6,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "compile": "node-sass ../frontend__css/sass/main.scss ../frontend__css/css/style.css -w",
-    "compress": "node-sass ../frontend__css/sass/main.scss ../frontend__css/css/style.css --output-style compressed",
+    "compile": "node-sass ../frontend__css/main/sass/main.scss ../frontend__css/main/css/style.css -w",
+    "compress": "node-sass ../frontend__css/main/sass/main.scss ../frontend__css/main/css/style.css --output-style compressed",
     "start": "nodemon server/index.js"
   },
   "keywords": [],
