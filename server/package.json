@@ -1,0 +1,33 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "node-sass ../frontend__css/sass/main.scss ../frontend__css/css/style.css -w",
+    "compress": "node-sass ../frontend__css/sass/main.scss ../frontend__css/css/style.css --output-style compressed",
+    "start": "nodemon server/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "express-session": "^1.17.3",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.1.0",
+    "passport": "^0.6.0",
+    "passport-facebook": "^3.0.0",
+    "passport-google-oauth2": "^0.2.0"
+  },
+  "devDependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "node-sass": "^9.0.0",
+    "nodemailer": "^6.9.6",
+    "nodemon": "^3.0.1"
+  }
+}

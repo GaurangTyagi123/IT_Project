@@ -1,0 +1,72 @@
+// colour variables
+$color-primary : rgba(47, 40, 240, 0.851);
+$color-secondary : rgba(47, 40, 240, 0.61);
+$color-tertiary : rgba(47, 40, 240, 0.393);
+
+$color-white-light:#eee;
+$color-white-dark : #fff;
+
+$color-grey-light:#777;
+$color-grey-dark: #888;
+
+// properties
+@property --background{
+    syntax: "<angle>";
+    initial-value: 90deg;
+    inherits: false;
+}
+
+*,
+*::after,
+*::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+    transition: all .3s ease-in-out;
+}
+html{
+    font-size: 62.5%;
+    @media only screen and (min-width:112.5em) {
+        font-size: 100%;
+    }
+    @media only screen and (max-width:68.75em) {
+        font-size: 50%;
+    }
+    @media only screen and (max-width:56.25em) {
+        font-size: 37.5%;
+    }
+}
+body{
+    background-color: #eee;
+    box-sizing: border-box;
+    font-family: "Poppins","Roboto",sans-serif;
+}
+.container{
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    background: linear-gradient(var(--background),transparent 50%,rgba(0,0,0,.2) 60%,darken($color-primary,40%) 40%);
+    animation: background-animation 1s forwards;
+    
+    @media only screen and (max-width:43.75em) {
+        flex-direction: column;
+        background : radial-gradient(circle at center,darken($color-primary,30%),darken($color-primary,50%));
+    }
+
+}
+
+// animation
+@keyframes background-animation {
+    from{
+        --background : 90deg;
+    }
+    to{
+        --background : 120deg;
+    }
+}
+@keyframes loader {
+    to{
+        rotate:359deg;
+    }
+    
+}
