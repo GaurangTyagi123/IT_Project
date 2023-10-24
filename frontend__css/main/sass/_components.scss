@@ -1,0 +1,152 @@
+.heading1{
+    font-size: 7rem;
+    font-family: "Poppins";
+    font-weight: 200;
+    letter-spacing: .5rem;
+    color: darken($color-primary,50%);
+    @media only screen and (max-width:40.625em) {
+        font-size: 10rem;
+        translate: 0 20rem;
+    }
+}
+.form{
+    height: 100%;
+    flex: 0 1 50%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: space-around;
+    gap: 3rem;
+
+    @media only screen and (max-width:40.625em) {
+        gap: 0;
+    }
+    &__label{
+        font-size: 2.2rem;
+        font-weight: 400;
+        font-family: "Roboto";
+        letter-spacing: .2rem;
+        color: darken($color-primary    ,90%);
+    }
+    .profile{
+        height: 20rem;
+        width: 20rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        align-self: center;
+        clip-path: circle(50% at 50% 50%);
+
+        img{
+            position: absolute;
+            border-radius: 50%;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        &__pic{
+            position: absolute;
+            color: transparent;
+            border:none;
+            opacity: 0;
+            z-index: 10;
+        }
+        &__label{
+            height: 20rem;
+            width: 20rem;
+            border-radius: 50%;
+            background-image: url("../images/Profile\ Picture.svg");
+            background-size: cover;
+        }
+    }
+}
+.Department__selection{
+    border:none;
+    height: 5rem;
+    width: 50rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: $color-grey-light;
+
+    &:focus{
+        outline: 2px solid darken($color-primary,40%);
+    }
+}
+.Department__option{
+    font-size: 1.5rem;
+    font-family: "Poppins";
+    font-weight: 200;
+    height: 2rem;
+}
+.Society__selection{
+    border:none;
+    height: 5rem;
+    width: 50rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: $color-grey-light;
+    
+    &:focus{
+        outline: 2px solid darken($color-primary,40%);
+    }
+    &::-webkit-scrollbar{
+        width: 1rem;
+        background-color: $color-white-dark;
+    }
+    &::-webkit-scrollbar-thumb{
+        background-color: $color-tertiary;
+    }
+}
+.Society__option{
+    font-size: 1.5rem;
+    font-family: "Poppins";
+    font-weight: 200;
+    height: 2rem;
+    
+}
+.Semester__selection{
+    border:none;
+    height: 5rem;
+    width: 50rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: $color-grey-light;
+
+    &:focus{
+        outline: 2px solid darken($color-primary,40%);
+    }
+}
+.Semester__option{
+    font-size: 1.5rem;
+    font-family: "Poppins";
+    font-weight: 200;
+    height: 2rem;
+}
+#btn{
+    cursor: pointer;
+    color: $color-white-light;
+    display: grid;
+    place-items: center;
+    text-decoration: none;
+    border: none;
+    height: 3em;
+    width: 10em;
+    font-size: 1.2rem;
+    font-weight: 200;
+    letter-spacing: .2rem;
+    background: darken($color-primary,50%);
+    border-radius: 10px;
+    
+    &:hover,&:focus{
+        box-shadow: 0 1.5rem 2rem rgba(0,0,0,.4);
+        translate: 0 -.2rem;
+
+    }
+}

@@ -1,0 +1,173 @@
+@property --background-percentage {
+  syntax: "<percentage>";
+  initial-value: 0%;
+  inherits: false; }
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+  transition: all .3s ease-in-out; }
+
+html {
+  font-size: 62.5%; }
+  @media only screen and (min-width: 112.5em) {
+    html {
+      font-size: 100%; } }
+  @media only screen and (max-width: 68.75em) {
+    html {
+      font-size: 50%; } }
+  @media only screen and (max-width: 56.25em) {
+    html {
+      font-size: 37.5%; } }
+  @media only screen and (max-width: 40.625em) {
+    html {
+      font-size: 25%; } }
+
+body {
+  background: linear-gradient(120deg, rgba(2, 2, 23, 0.851) var(--background-percentage), #eee var(--background-percentage));
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  font-family: "Poppins","Roboto",sans-serif;
+  animation: backgroundAnimation .4s forwards ease-in-out; }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  gap: 10rem; }
+  @media only screen and (max-width: 40.625em) {
+    .container {
+      justify-content: space-evenly; } }
+
+@keyframes backgroundAnimation {
+  to {
+    --background-percentage:15%; } }
+
+.heading1 {
+  font-size: 7rem;
+  font-family: "Poppins";
+  font-weight: 200;
+  letter-spacing: .5rem;
+  color: rgba(2, 2, 23, 0.851); }
+  @media only screen and (max-width: 40.625em) {
+    .heading1 {
+      font-size: 10rem;
+      translate: 0 20rem; } }
+
+.form {
+  height: 100%;
+  flex: 0 1 50%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: space-around;
+  gap: 3rem; }
+  @media only screen and (max-width: 40.625em) {
+    .form {
+      gap: 0; } }
+  .form__label {
+    font-size: 2.2rem;
+    font-weight: 400;
+    font-family: "Roboto";
+    letter-spacing: .2rem;
+    color: rgba(0, 0, 0, 0.851); }
+  .form .profile {
+    height: 20rem;
+    width: 20rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    align-self: center;
+    clip-path: circle(50% at 50% 50%); }
+    .form .profile__pic {
+      position: absolute;
+      color: transparent;
+      border: none;
+      opacity: 0; }
+    .form .profile__label {
+      height: 20rem;
+      width: 20rem;
+      border-radius: 50%;
+      background-image: url("../images/Profile Picture.svg");
+      background-size: cover; }
+
+.Department__selection {
+  border: none;
+  height: 5rem;
+  width: 50rem;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #777; }
+  .Department__selection:focus {
+    outline: 2px solid rgba(7, 5, 71, 0.851); }
+
+.Department__option {
+  font-size: 1.5rem;
+  font-family: "Poppins";
+  font-weight: 200;
+  height: 2rem; }
+
+.Society__selection {
+  border: none;
+  height: 5rem;
+  width: 50rem;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #777; }
+  .Society__selection:focus {
+    outline: 2px solid rgba(7, 5, 71, 0.851); }
+  .Society__selection::-webkit-scrollbar {
+    width: 1rem;
+    background-color: #fff; }
+  .Society__selection::-webkit-scrollbar-thumb {
+    background-color: rgba(47, 40, 240, 0.393); }
+
+.Society__option {
+  font-size: 1.5rem;
+  font-family: "Poppins";
+  font-weight: 200;
+  height: 2rem; }
+
+.Semester__selection {
+  border: none;
+  height: 5rem;
+  width: 50rem;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #777; }
+  .Semester__selection:focus {
+    outline: 2px solid rgba(7, 5, 71, 0.851); }
+
+.Semester__option {
+  font-size: 1.5rem;
+  font-family: "Poppins";
+  font-weight: 200;
+  height: 2rem; }
+
+#btn {
+  cursor: pointer;
+  color: #eee;
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  border: none;
+  height: 3em;
+  width: 10em;
+  font-size: 1.2rem;
+  font-weight: 200;
+  letter-spacing: .2rem;
+  background: rgba(2, 2, 23, 0.851);
+  border-radius: 10px; }
+  #btn:hover, #btn:focus {
+    box-shadow: 0 1.5rem 2rem rgba(0, 0, 0, 0.4);
+    translate: 0 -.2rem; }

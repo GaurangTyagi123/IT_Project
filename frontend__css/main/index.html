@@ -1,11 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ram Lal Anand College</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    Hello World
+    <div class="container">
+        <h1 class="heading1">One More Step...</h1>
+        <form action="http://localhost:5000/additionalInfo" method="POST" class="form">
+            <div class="profile">
+                <label for="pic" class="form__label profile__label">&nbsp;</label>
+                <input type="file" name="profile pic" id="pic" class="profile__pic">
+                <img src="" alt="profile">
+            </div>
+            <label for="Department" class="form__label">Department</label>
+            <select class="Department__selection">
+                <option value="select" class="Department__option">Select Department</option>
+                <option value="Computer Science" class="Department__option">Computer Science</option>
+                <option value="Statistics" class="Department__option">Statistics</option>
+                <option value="Microbiology" class="Department__option">Microbiology</option>
+                <option value="English" class="Department__option">English</option>
+                <option value="Hindi" class="Department__option">Hindi</option>
+                <option value="History" class="Department__option">History</option>
+                <option value="Political Science" class="Department__option">Political Science</option>
+                <option value="Commerce" class="Department__option">Commerce</option>
+                <option value="Economics" class="Department__option">Economics</option>
+                <option value="Geology" class="Department__option">Geology</option>
+                <option value="Physical_Education" class="Department__option">Physical Education</option>
+                <option value="Bachelor_of_Management_Studies" class="Department__option">Bachelor of Management Studies
+                </option>
+                <option value="Department_of_EVS" class="Department__option">Department of Environmental Studies
+                </option>
+                <option value="Department_of_BA" class="Department__option">Department of B.A</option>
+                <option value="Mathematics" class="Department__option">Mathematics</option>
+                <option value="Department_of_Hindi_Patrakaritas" class="Department__option">Department of Hindi
+                    Patrakarita</option>
+            </select>
+            <label for="Societies" class="form__label">Societies</label>
+            <select name="Society" id="" class="Society__selection">
+                <option value="Select Society" class="Society__option">Select Society</option>
+                <option value="Sugam" class="Society__option">Sugam</option>
+                <option value="Spic Macay" class="Society__option">Spic Macay</option>
+                <option value="Aaroh-Hindi Debating Society" class="Society__option">Aaroh-Hindi Debating Society
+                </option>
+                <option value="Hasratein" class="Society__option">Hasratein</option>
+                <option value="Yoga and meditation" class="Society__option">Yoga and mediation</option>
+                <option value="Samdrishti and Srijan" class="Society__option">Samdrishti and Srijan</option>
+                <option value="Chitra" class="Society__option">Chitra</option>
+                <option value="Aikyam- North East society" class="Society__option">Aikyam- North East society</option>
+                <option value="Sangoshthi" class="Society__option">Sangoshthi</option>
+                <option value="Abhivyakti" class="Society__option">Abhivyakti</option>
+                <option value="Parda" class="Society__option">Parda</option>
+                <option value="Aawaz" class="Society__option">Aawaz</option>
+                <option value="Quru" class="Society__option">Quru</option>
+                <option value="Glassroots" class="Society__option">Glassroots</option>
+                <option value="Equal Opportunity Cell" class="Society__option">Equal Opportunity Cell</option>
+                <option value="Andaz-Anchoring Society" class="Society__option">Andaz-Anchoring Society</option>
+                <option value="Ananta-Drishti" class="Society__option">Ananta-Drishti</option>
+                <option value="Illusion" class="Society__option">Illusion</option>
+                <option value="Dastoor" class="Society__option">Dastoor</option>
+                <option value="Inara" class="Society__option">Inara</option>
+                <option value="ENACTUS" class="Society__option">ENACTUS</option>
+                <option value="ENACTUS" class="Society__option">Website Committee</option>
+                <option value="The Green Campus Society" class="Society__option">The Green Campus Society</option>
+                <option value="Vasudha" class="Society__option">Vasudha</option>
+            </select>
+            <label for="semester" class="form__label">Semester</label>
+            <select name="Semester" class="Semester__selection">
+                <option value="select_semester">Select Semester</option>
+                <option value="I" class="Semester__option">I</option>
+                <option value="II" class="Semester__option">II</option>
+                <option value="III" class="Semester__option">III</option>
+                <option value="IV" class="Semester__option">IV</option>
+                <option value="V" class="Semester__option">V</option>
+                <option value="VI" class="Semester__option">VI</option>
+            </select>
+            <a href="/" value="submit" id="btn">Submit</a>
+        </form>
+
+    </div>
 </body>
+
 </html>

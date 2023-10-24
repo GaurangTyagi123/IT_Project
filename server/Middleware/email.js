@@ -26,9 +26,6 @@ const mail = async (email) => {
     messageId = info.messageId;
     return OTP;
 }
-const checkExistence = (mail) => {
-
-}
 const validateMail = async (req, res, next) => {
     const { email } = req.body;
     const mailRegex = new RegExp("[A-Za-z0-9\.]+@rla.du.ac.in$");
