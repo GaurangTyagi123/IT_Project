@@ -37,23 +37,25 @@ const validateMail = async (req, res, next) => {
             let emails = [];
             db.collection("collegeStudents").find({ "email": email }).forEach(result => {
                 emails.push(result.email)
-            }).then(() => {
+            }).then(async () => {
                 flag = emails.length > 0 ? false : true;
                 if (!flag)
-                    res.status(200).json({ status: false, cause: "user already exists" })
+                    return res.status(200).json({ status: false, cause: "user already exists" })
+                else{
+                    let otp;
+                    if (mailRegex.test(email)) {
+                        otp = await mail(email);
+                        if (otp>0)
+                            return res.status(200).json({ otp });
+                        else
+                            return res.status(200).json({ status: false, cause: "server error" })
+                    }
+                    else
+                        return res.status(200).json({ status: false, cause: "incorrect email" })  
+                }
             })
         }
     })
-    let otp;
-    if (mailRegex.test(email)) {
-        otp = await mail(email);
-        if (otp>0)
-            return res.status(200).json({ otp });
-        else
-            return res.status(200).json({ status: false, cause: "server error" })
-    }
-    else
-        return res.status(200).json({ status: false, cause: "incorrect email" })
 }
 // checkExistence('gaurang4065@rla.du.ac.in')
 export default validateMail;

@@ -1,0 +1,30 @@
+// colour variables
+$color-primary : rgba(47, 40, 240, 0.851);
+$color-secondary : rgba(47, 40, 240, 0.61);
+$color-tertiary : rgba(47, 40, 240, 0.393);
+
+$color-white-light:#eee;
+$color-white-dark : #fff;
+
+$color-grey-light:#777;
+$color-grey-dark: #888;
+
+*,*::after,*::before{
+    margin:0;
+    padding:0;
+    box-sizing: inherit;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    box-sizing: border-box;
+    font-family: "Roboto";
+    background-color: $color-white-light;
+}
+.container{
+    display: grid;
+    grid-template-columns: repeat(10,1fr);
+    grid-template-rows: repeat(5,auto);
+    gap: 3rem;
+}

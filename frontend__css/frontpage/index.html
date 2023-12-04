@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,600|Poppins:100,200,400,600">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Ram Lal Anand College</title>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="profile">
+                <img src="../../server/profile_pics/Gaurang Tyagi.jpg" alt="profile pic" class="profile__img">
+                <p class="profile__name">Gaurang Tyagi</p>
+            </div>
+            <div class="tabs">
+                <ul class="tab__list">
+                    <li class="list-item">map</li>
+                    <li class="list-item">societies</li>
+                    <li class="list-item">department</li>
+                    <li class="list-item">time table</li>
+                </ul>
+            </div>
+        </header>
+        <div class="societies">
+            <h2 class="societies__heading">your societies</h2>
+            <div class="cards">
+                <div class="card">
+                    <img src="https://rlacollege.edu.in/images/socities-logo/hindi.jpg" alt="society--1"
+                        class="card__image">
+                    <p class="card__name">SOCIETY NAME</p>
+                </div>
+                <div class="card">
+                    <img src="https://rlacollege.edu.in/images/socities-logo/hindi.jpg" alt="society--1"
+                        class="card__image">
+                    <p class="card__name">SOCIETY NAME</p>
+                </div>
+                <div class="card">
+                    <img src="https://rlacollege.edu.in/images/socities-logo/hindi.jpg" alt="society--1"
+                        class="card__image">
+                    <p class="card__name">SOCIETY NAME</p>
+                </div>
+                <div class="card">
+                    <img src="https://rlacollege.edu.in/images/socities-logo/hindi.jpg" alt="society--2"
+                        class="card__image">
+                    <p class="card__name">SOCIETY NAME</p>
+                </div>
+                <div class="card">
+                    <img src="https://rlacollege.edu.in/images/socities-logo/sugam.jpg" alt="society--3"
+                        class="card__image">
+                    <p class="card__name">SOCIETY NAME</p>
+                </div>
+                <div class="card">
+                    <img src="https://rlacollege.edu.in/pdf/societies/website.png" alt="society--4" class="card__image">
+                    <p class="card__name">SOCIETY NAME</p>
+                </div>
+            </div>
+        </div>
+        <div class="department">
+            <div class="department__container">
+                <span class="department__name">DEPARTMENT NAME</span>
+                <a href="#" class="department__info">More Info</a>
+                <div class="department__info--hidden" data-hidden="true" >
+                    <div class="track__container">
+                        <button class="slide__button slide__button--left"><</button>
+                        <ul class="track">
+                            <li class="slide current_slide">
+                                <div class="teacher__container">
+                                    <img src="https://source.unsplash.com/random" alt="random image"
+                                        class="teacher__image">
+                                    <p class="teacher__designation">Assistant Professor/Teacher Incharge</p>
+                                    <p class="teacher__email">random.1234@gmail.com</p>
+                                </div>
+                                <div class="teacher__container">
+                                    <img src="https://source.unsplash.com/random" alt="random image"
+                                        class="teacher__image">
+                                    <p class="teacher__designation">Assistant Professor/Teacher Incharge</p>
+                                    <p class="teacher__name">Mrs Sakshi Tareesh Khanna</p>
+                                    <p class="teacher__email">random.1234@gmail.com</p>
+                                </div>
+                            </li>
+                            <li class="slide">
+                                <div class="teacher__container">
+                                    <img src="https://source.unsplash.com/random" alt="random image"
+                                        class="teacher__image">
+                                    <p class="teacher__designation">Assistant Professor/Teacher Incharge</p>
+                                    <p class="teacher__email"><span class="--u-bold">email:  </span>random.1234@gmail.com</p>
+                                </div>
+                                <div class="teacher__container">
+                                    <img src="https://source.unsplash.com/random" alt="random image"
+                                        class="teacher__image">
+                                    <p class="teacher__designation">Assistant Professor/Teacher Incharge</p>
+                                    <p class="teacher__email"><span class="--u-bold">email:  </span>random.1234@gmail.com</p>
+                                </div>
+                            </li>
+                            <li class="slide">
+                                <div class="teacher__container">
+                                    <img src="https://source.unsplash.com/random" alt="random image"
+                                        class="teacher__image">
+                                    <p class="teacher__designation">Assistant Professor/Teacher Incharge</p>
+                                    <p class="teacher__email"><span class="--u-bold">email:  </span>random.1234@gmail.com</p>
+                                </div>
+                                <div class="teacher__container">
+                                    <img src="https://source.unsplash.com/random" alt="random image"
+                                        class="teacher__image">
+                                    <p class="teacher__designation">Assistant Professor/Teacher Incharge</p>
+                                    <p class="teacher__email"><span class="--u-bold">email:  </span>random.1234@gmail.com</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <button class="slide__button slide__button--right">></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="map">
+            MAP
+        </div>
+        <div class="time-table">
+            
+        </div>
+    </div>
+    <script>
+        const track = document.querySelector(".track")
+        const slides = document.querySelectorAll(".slide")
+        const leftButton = document.querySelector(".slide__button--left")
+        const rightButton = document.querySelector(".slide__button--right")
+        const trackWidth = track.getBoundingClientRect().width;
+
+        slides.forEach((ele, index) => {
+            ele.style.left = `${trackWidth * index}px`
+        })
+        rightButton.addEventListener("click", e => {
+            const currentSlide = track.querySelector(".current_slide")
+            const nextSlide = currentSlide.nextElementSibling;
+            track.style.transform = `translateX(-${nextSlide.style.left})`;
+            nextSlide.classList.add('current_slide')
+            currentSlide.classList.remove("current_slide")
+        })
+        leftButton.addEventListener("click", e => {
+            const currentSlide = track.querySelector(".current_slide")
+            const prevSlide = currentSlide.previousElementSibling;
+            track.style.transform = `translateX(-${prevSlide.style.left})`;
+            prevSlide.classList.add('current_slide')
+            currentSlide.classList.remove("current_slide")
+        })
+    </script>
+</body>
+
+</html>

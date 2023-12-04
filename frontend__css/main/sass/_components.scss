@@ -39,7 +39,7 @@
         position: relative;
         align-self: center;
         clip-path: circle(50% at 50% 50%);
-
+        
         img{
             position: absolute;
             border-radius: 50%;
@@ -84,24 +84,28 @@
     height: 2rem;
 }
 .Society__selection{
+    display: inline-block;
     border:none;
-    height: 5rem;
+    height: 30rem;
     width: 50rem;
     text-align: center;
     font-size: 1.5rem;
     font-weight: 400;
     color: $color-grey-light;
-    
+
+    &::-webkit-scrollbar{
+        width: .5rem;
+    }
+    &::-webkit-scrollbar-thumb{
+        background-color: $color-grey-light;
+    }
+    &::-webkit-scrollbar-track{
+        background-color: $color-white-dark;
+    }
     &:focus{
         outline: 2px solid darken($color-primary,40%);
     }
-    &::-webkit-scrollbar{
-        width: 1rem;
-        background-color: $color-white-dark;
-    }
-    &::-webkit-scrollbar-thumb{
-        background-color: $color-tertiary;
-    }
+
 }
 .Society__option{
     font-size: 1.5rem;

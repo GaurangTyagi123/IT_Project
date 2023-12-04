@@ -34,7 +34,7 @@ connectToDb((err) => {
     }
 })
 Route.get("/google", passport.authenticate("google", {
-    scope:["profile","email"]
+    scope:["profile","email","https://www.googleapis.com/auth/classroom.courses.readonly","https://www.googleapis.com/auth/classroom.coursework.me"]
 }))
 Route.get("/google/redirect", passport.authenticate("google"), (req, res) => {
     if (req.user) {
@@ -71,12 +71,12 @@ Route.post("/signup", async (req, res) => {
         })
     }
     else {
-        return res.status(500).json({status:false})
+        return res.status(200).json({status:false,cause:"incorrect OTP"})
     }
 })
 Route.post("/login",  (req, res) => {
     const { username, email, password } = req.body;
-    db.collection("collegeStudents").findOne({ email, username }).then(async result => {
+    db.collection("collegeStudents").findOne({ email }).then(async result => {
         if (result) {
             const passCheck = await bcryptjs.compare(password, result.passhash)
             if (passCheck) {
@@ -93,4 +93,5 @@ Route.post("/login",  (req, res) => {
         }
     })
 })
+
 export default Route;
