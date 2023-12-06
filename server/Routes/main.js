@@ -64,7 +64,7 @@ Route.post("/additionalInfo", (req, res) => {
             return res.status(200).json({ status: true, cause: "valid user" })
         }
         else
-            return res.json({ status: false, cause: "invalid user" })
+            return res.status(200).json({ status: false, cause: "invalid user" })
     }
     else {
         res.status(200).json({ status: false, cause: "token not set" })
@@ -170,12 +170,15 @@ Route.get("/getinfo/:id", (req, res) => {
             })
             let accessToken = null
             if (!outsider) {
-                accessToken = tokens.accessToken
+                accessToken = tokens ? tokens.accessToken : ''
                 profilePath = `http://localhost:5000/${profile_pic}`
             }
-            else
+            else {
+                
+                accessToken = tokens ? tokens.accessToken : ''
                 profilePath = profile_pic;
-            const mask = { username, email, profile_pic: profilePath, departmentDetails, teacherDetails, facultyDetails, Semester, Societies, socLinks, outsider, courseInfo, accessToken: tokens.accessToken }
+            }
+            const mask = { username, email, profile_pic: profilePath, departmentDetails, teacherDetails, facultyDetails, Semester, Societies, socLinks, outsider, courseInfo, accessToken: accessToken }
             return res.status(200).json({ status: true, data: mask, cause: "user found" })
         }
     })
